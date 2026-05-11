@@ -1,0 +1,25 @@
+name: Build JAR
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Setup Gradle
+        run: chmod +x gradlew
+      - name: Build
+        run: ./gradlew build
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: SwillDummy
+          path: build/libs/*.jar

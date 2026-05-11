@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "swilldummy",
+  "version": "1.0",
+  "name": "Swill Dummy",
+  "description": "Пустышка для проверки Fabric",
+  "authors": ["Swill"],
+  "entrypoints": {
+    "main": ["com.swill.dummy.SwillDummy"],
+    "client": ["com.swill.dummy.DummyClient"]
+  }
+}
